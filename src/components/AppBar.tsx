@@ -40,16 +40,20 @@ export default {
 } as Meta<typeof AppBar>;
 
 export function NavBar({
+  theme,
   handleTheme,
   handleSectionSelection,
   handleWelcomeOpen,
 }: {
+  theme: Theme;
   handleTheme: (theme: Theme) => void;
   handleSectionSelection: (section: string | null) => void;
   handleWelcomeOpen: (state: boolean) => void;
 }) {
   const [themeOpen, setOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  console.log(theme.name);
 
   return (
     <AppBar style={{ zIndex: 100 }}>

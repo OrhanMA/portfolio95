@@ -5,7 +5,8 @@ import { styleReset } from "react95";
 import styled from "styled-components";
 // pick a theme of your choice
 import { Theme } from "react95/dist/types";
-import aiee from "react95/dist/themes/aiee";
+import original from "react95/dist/themes/original";
+
 // aiee Windows95 font (optionally)
 // import ms_sans_serif from "react95/dist/fonts/ms_sans_serif.woff2";
 // import ms_sans_serif_bold from "react95/dist/fonts/ms_sans_serif_bold.woff2";
@@ -34,13 +35,14 @@ import { NavBar } from "@/components/AppBar";
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  overflow: scroll;
+  overflow: hidden;
   align-items: center;
+  padding: 0;
+  margin: 0;
 `;
 
 export default function Home() {
-  const [theme, setTheme] = useState(aiee);
+  const [theme, setTheme] = useState(original);
   const [welcomeOpen, setWelcomeOpen] = useState(true);
   const [section, setSection] = useState<string | null>(null);
 
@@ -63,6 +65,7 @@ export default function Home() {
         <NavBar
           handleSectionSelection={handleSectionSelection}
           handleWelcomeOpen={handleWelcomeOpen}
+          theme={theme}
           handleTheme={handleTheme}
         />
         <Welcome

@@ -6,20 +6,20 @@ import {
   WindowContent,
   Frame,
 } from "react95";
-import { Meta } from "@storybook/react";
 import styled from "styled-components";
 import AboutWindow from "./AboutWindow";
 import StackWindow from "./StackWindow";
 import ContactWindow from "./ContactWindow";
 import ProjectsWindow from "./ProjectsWindow";
 const Wrapper = styled.div`
-  padding: 5rem;
+  padding: 5rem 0rem;
   width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   background: ${({ theme }) => theme.desktopBackground};
+
   .window-title {
     display: flex;
     align-items: center;
@@ -96,14 +96,12 @@ const Wrapper = styled.div`
 
   .tech-row {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
   }
 
   .stack-section {
-    padding: 0.5rem;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
   }
 
   .section {
